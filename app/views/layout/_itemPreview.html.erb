@@ -1,0 +1,31 @@
+<% stylesheet_link_tag "itemPreview" %>
+<% javascript_include_tag "itemPreview" %>
+<div id="itemPreview">
+	<div id="imageSection">
+		<div id="bkImage"><%= image_tag( book_image, :alt => title) %></div>
+		<div id="theBtns">
+			<div id="detailsBtn">
+					<%= link_to "view details", book_path(book_id), :class => "previewBtn" %>
+			</div>
+			<div id="addBtn">
+				<% if current_user %>
+					<%= form_tag order_items_path do %>
+						<%= hidden_field_tag :book_id, book_id %>
+						<% number_field_tag :quantity, 1 %>
+						<%= submit_tag("Add to basket", :id=>"addInPreviewBtn", :class=>"Btn", :name=>"submit") %>
+					<% end %>
+				<% else %>
+					<%= link_to "Add to basket", new_user_path, :class=>"addPreviewBtn" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div id="bkTitle"><%= title %></div>
+	<div id="bkAuthor"><%= author %></div>
+	<div id="bkFormat"><%= format %></div>
+	<div id="prices">
+		<div id="normalPrice" class="displayPrice"><%= quid(price) %></div>
+		<div id="oldPrice" class="hidePrice"><%= quid(price) %></div>
+		<div id="salePrice" class="hidePrice"><%= quid(price) %></div>
+	</div>
+</div>

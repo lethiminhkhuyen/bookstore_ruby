@@ -1,0 +1,130 @@
+#itemPreview{
+	width: 11vw;
+	height: 24vw;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	font-family: sans-serif;
+	text-align: center;
+	overflow: hidden;
+}
+#imageSection{
+	width: 100%;
+	height: 17.4vw;
+	overflow: hidden;
+}
+#bkImage{
+	width: 100%;
+	height: 17.4vw;
+}
+#theBtns{
+	width: 100%;
+	opacity: 0;
+	transition: all .5s;
+	z-index: 1;
+}
+#addBtn, #detailsBtn{
+	width: 100%;
+	height: 1.4vw;
+	background-color: #fff;
+}
+#detailsBtn{
+	margin-bottom: .35vw;
+}
+#addInPreviewBtn{
+	width: 100%;
+	height: 100%;
+	line-height: 1.4vw;
+	font-size: 1vw;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: center;
+	border: none;
+	text-decoration: none;
+}
+.previewBtn, .addPreviewBtn{
+	display: block;
+	width: 100%;
+	height: 1.4vw;
+	line-height: 1.4vw;
+	font-size: 1vw;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: center;
+	border: none;
+	text-decoration: none;
+	background-color: #F5AE06;
+}
+.addPreviewBtn{
+	background-color: #1EA5AE;
+}
+#addInPreviewBtn{
+	background-color: #1EA5AE;
+}
+.previewBtn:hover, #addInPreviewBtn:hover{
+	opacity: .5;
+}
+#itemPreview:hover #theBtns{
+	opacity: 1;
+	-ms-transform: translateY(-3.5vw);
+	-webkit-transform: translateY(-3.5vw);
+	transform: translateY(-3.5vw);
+}
+#bkTitle{
+	font-size: 1vw;
+	line-height: 1.05vw;
+	height: 2.1vw;
+	width: 100%;
+	font-weight: bold;
+	color: #4a4a4a;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+#bkAuthor{
+	font-size: .9vw;
+	color: #F5AE06;
+	font-weight: bold;
+	text-overflow: ellipsis;
+}
+#bkFormat{
+	font-size: .9vw;
+	color: #9b9b9b;
+	font-style: italic;
+}
+#prices{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#normalPrice, #salePrice, #oldPrice{
+	overflow: hidden;
+	font-size: 1vw;
+	font-weight: bold;
+	text-align: center;
+}
+#normalPrice{
+	width: 100%;
+	color: #4a4a4a;
+}
+#salePrice{
+	text-decoration: line-through;
+	color: #9b9b9b;
+	width: 40%;
+	float: right;
+}
+#oldPrice{
+	float: left;
+	width: 40%;
+}
+.displayPrice{
+	display: block;
+}
+.hidePrice{
+	display: none;
+}
+/*======Ani=====*/
+

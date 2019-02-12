@@ -1,0 +1,54 @@
+<% stylesheet_link_tag "itemDetails" %>
+<% javascript_include_tag "itemDetails" %>
+<div id="bookContent">
+	<section id="navPoint">
+		<span class="navPointHead">You are here:</span><span class="navPointDir"> <%= category %></span><span class="navPointHead"> &#9656; </span><span class="navPointDir"> <%= genre %></span><span class="navPointHead"> &#9656; </span><span class="navPointDir"><%= title %></span>
+	</section>
+	<section id="bookMain">
+		<div id="bookTitle">
+			<div class="theTitle"><%= title %></div>
+			<div class="separatorLine"></div>
+			<div id="theAuthor">by <%= author %></div>
+		</div>
+		<div id="bookMainSection">
+			<div id="bookImage"><%= image_tag(book_image, :alt => title) %></div>
+			<div id="bookAllDetails">
+				<div id="mainPrice">
+					<span class="theBookPrice"><%= quid(price) %></span><span class="freeDeliv"> + FREE delivery to UK in 2-4 working days</span>
+				</div>
+				<div id="buttonRow">
+					<div id="addToBasket">
+						<% if current_user %>
+							<%= form_tag order_items_path do %>
+								<%= hidden_field_tag :book_id, book_id %>
+								<% number_field_tag :quantity, 1 %>
+								<%= submit_tag("Add to basket", :id=>"addToBasketBtn", :class=>"Btn", :name=>"submit") %>
+							<% end %>
+						<% else %>
+					<%= link_to "Add to basket", new_user_path, :class=>"addBasketBtn" %>
+				<% end %>
+					</div>
+					<div id="addToWishlist"></div>
+					<div id="wishlistDesc">Add to wishlist</div>
+				</div>
+				<div id="productDetails">
+					<h3 class="productDetailsTitle">Product details</h3>
+					<div class="separatorLine"></div>
+					<div id="bookAuthor"><span class="detailsDesc">Author: </span><span class="detailsD"><%= author %></span></div>
+					<div id="isbn"><span class="detailsDesc">ISBN: </span><span class="detailsD"><%= isbn %></span></div>
+					<div id="format"><span class="detailsDesc">Format: </span><span class="detailsD"><%= format %></span></div>
+					<div id="publisher"><span class="detailsDesc">Publisher: </span><span class="detailsD"><%= publisher %></span></div>
+					<div id="pubicationDate"><span class="detailsDesc">Publication date: </span><span class="detailsD"><%= publication_date %></span></div>
+					<div id="pages"><span class="detailsDesc">Pages: </span><span class="detailsD"><%= pages %></span></div>
+					<div id="productDimen"><span class="detailsDesc">Product dimensions: </span><span class="detailsD"><%= dimension_w %></span><span class="detailsD"> x </span><span class="detailsD"> <%= dimension_h %></span><span class="detailsD"> x </span><span class="detailsD"><span class="detailsD"> <%= dimension_d %></span> <span class="detailsD"> mm</span></div>
+					<div id="weight"><span class="detailsDesc">Weight: </span><span class="detailsD"><%= weight %></span><span class="detailsD"> g</span></div>
+				</div>
+				<div id="productDesc">
+					<div class="productDetailsTitle">Product description</div>
+					<div class="separatorLine"></div>
+					<div class="detailsDesc"><%= description %></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

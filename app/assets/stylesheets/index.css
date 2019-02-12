@@ -1,0 +1,17 @@
+#theBooks{
+	width: 80vw;
+	margin-left: 10vw;
+	margin-top: 2.8vw;
+	margin-bottom: 2.8vw;
+
+	/*display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;*/
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	justify-content: space-between;
+	grid-column-gap: 2.8vw;
+	grid-row-gap: 2.8vw;
+}

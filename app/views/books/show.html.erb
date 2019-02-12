@@ -1,0 +1,12 @@
+<% stylesheet_link_tag "index" %>
+
+<%= render "layout/itemDetails", category: Category.where(id: Genre.where(id: @book.genre_id).pluck(:category_id)[0]).pluck(:title)[0], genre: Genre.where(id: @book.genre_id).pluck(:title)[0], book_id: @book.id, title: @book.title, author: @book.author, book_image: @book.book_image, price: @book.price, author: @book.author, isbn: @book.isbn, format: @book.format, publisher: @book.publisher, publication_date: @book.publication_date, pages: @book.pages, dimension_w: @book.dimension_w, dimension_h: @book.dimension_w, dimension_d: @book.dimension_d, weight: @book.weight, description: @book.description %>
+  <section class="recommendation">
+    <div class="theTitle">Other books you might like</div>
+    <div class="separatorLine"></div>
+    <div id="sixBooks">
+    <% similar_books(@book).each do |book| %>
+      <%= render "layout/itemPreview", book_id: book.id, book_image: book.book_image, title: book.title,  author: book.author, format: book.format, price: book.price %>
+    <% end %>
+    </div>
+  </section>

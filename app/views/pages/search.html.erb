@@ -1,0 +1,6 @@
+<div id="theBooks">
+<% @books.each do |book| %>
+	<%= render "layout/itemPreview", book_id: book.id, book_image: book.book_image, title: book.title,  author: book.author, format: book.format, price: book.price %>
+
+<% end %>
+</div>

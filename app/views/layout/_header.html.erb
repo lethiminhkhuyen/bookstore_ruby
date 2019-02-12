@@ -1,0 +1,109 @@
+<% stylesheet_link_tag "headerStyle" %>
+<% javascript_include_tag "header" %>
+<header>
+	<section id="topMenu" class="flex">
+		<p id="promoMessage">
+			<span class = "blueText"><%= @blueMessage %></span> <span class = "blackText"><%= @blackMessage %></span>
+		</p>
+		<nav id="pageSetting" class="flex">
+			<div class="topNav"><a id="help" href="">Help</a></div>
+			<div class="topNav"><span class="separatorTop">&#9474;</span></div>
+			<div class="topNav"><a id="contact" href="">Contact</a></div>
+			<div class="topNav"><span class="separatorTop">&#9474;</span></div>
+			<div class="topNav" id="currencyDropdown" onclick="setCurrency()">
+				<div id="dropbtn" class="britishGBP"></div>
+				<!--div id="secondOption" onclick="currencyChanged()"></div-->
+			</div>
+		</nav>
+	</section>
+	<%= link_to root_path do %>
+		<section id="logo"></section>
+	<% end %>
+	<div id="bottomSection">
+		<section id="mainMenu"  class="flex">
+			<div id="leftPart"  class="flex">
+				<div class="cateMenu" id="fictionMenu">
+					<a class="cateTitle" href="">FICTION</a>
+					<div class="dropdownContent">
+						<div class = "horLine"></div>
+						<div class = "dropdownList">
+							<% @fictions.each do |genre|%>
+							<%= link_to (genre.title), genre_path(genre.id), :id => genre.id, :class => "cateEle" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="cateMenu"><span class="separator">&#9474;</span></div>
+				<div class="cateMenu" id="nonfictionMenu">
+					<a class="cateTitle" href="">NON-FICTION</a>
+					<div class="dropdownContent">
+						<div class = "horLine"></div>
+						<div class = "dropdownList">
+							<% @nonfictions.each do |genre|%>
+							<%= link_to (genre.title), genre_path(genre.id), :id => genre.id, :class => "cateEle" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="cateMenu"><span class="separator">&#9474;</span></div>
+				<div class="cateMenu" id="childrenMenu">
+					<a class="cateTitle" href="">CHILDREN'S</a>
+					<div class="dropdownContent">
+						<div class = "horLine"></div>
+						<div class = "dropdownList">
+							<% @childrens.each do |genre|%>
+							<%= link_to (genre.title), genre_path(genre.id), :id => genre.id, :class => "cateEle" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="cateMenu"><span class="separator">&#9474;</span></div>
+				<div class="cateMenu" id="educationMenu">
+					<a class="cateTitle" href="">EDUCATION</a>
+					<div class="dropdownContent">
+						<div class = "horLine"></div>
+						<div class = "dropdownList">
+							<% @educations.each do |genre|%>
+							<%= link_to (genre.title), genre_path(genre.id), :id => genre.id, :class => "cateEle" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="cateMenu"><span class="separator">&#9474;</span></div>
+				<div class="cateMenu">
+					<a class="cateTitle" href="">BESTSELLERS</a>
+				</div>
+				<div class="cateMenu"><span class="separator">&#9474;</span></div>
+				<div class="cateMenu">
+					<a class="cateTitle" href="">NEW</a>
+				</div>
+				<div class="cateMenu"><span class="separator">&#9474;</span></div>
+				<div class="cateMenu">
+					<a class="cateTitle" href="">SALES</a>
+				</div>
+			</div>
+			<div id="rightPart" class="flex">
+				<!--div id="searchBar" class="flex">
+					<input class="mainSearch" id="searchInput" type="text" placeholder="Title, author, keyword or ISBN">
+					<button class="mainSearch" id="searchButton" type="submit"></button>
+				</div-->
+				<div id="searchBar" class="flex">
+					<%= form_tag("/search", method: :get, :id => "searchForm", :class => "flex") do %>
+  						<%= text_field_tag :searchInput, params[:searchInput] , :class => "mainSearch", :placeholder => "Title, author, ISBN..." %>
+  						<%= submit_tag '', title: nil, :class => "mainSearch", :id => "searchButton" %>
+					<% end %>
+				</div>
+				<% if current_user %>
+					<%= link_to "", current_user, :id => "userAccount" %>
+					<a href="" id="wishList"></a>
+					<%= link_to current_cart.items_count, cart_path, :id => "basket" %>
+				<% else %>
+					<%= link_to "", new_user_path, :id => "userAccount" %>
+					<a href="" id="wishList"></a>
+					<%= link_to "", new_user_path, :id => "basket" %>
+				<% end %>
+				
+			</div>
+		</section>
+	</div>
+</header>

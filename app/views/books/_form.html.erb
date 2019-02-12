@@ -1,0 +1,110 @@
+<% stylesheet_link_tag "itemDetails" %>
+<%= form_with(model: book, :class =>"bookContent", local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <section id="bookMain">
+    <div id="bookMainSection">
+      <div id="bookImage"><%= form.file_field :book_image, :class => "imageUploader" %></div>
+      <div id="bookAllDetails">
+        <div id="theTitle" class="formLine">
+          <span class="inputDesc">Title</span>
+          <%= form.text_field :title, :class => "inputField" %>
+        </div>
+        <div id="mainPrice" class="formLine">
+          <span class="inputDesc">Price</span>
+          <%= form.text_field :price, :class => "inputField" %>
+        </div>
+        <div id="priceDiscount" class="formLine">
+          <span class="inputDesc">Discount</span>
+          <%= form.select(:discount, options_for_select([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95], selected: 0)) %>
+          <span class="inputUnit"> %</span>
+        </div>
+        <div id="productDetails">
+          <div class="productDetailsTitle">Product details</div>
+          <div class="separatorLine"></div>
+          <div id="pDetails">
+            <%= form.hidden_field :import_date, :value => Date.today %>
+            <div id="isBestseller" class="formLine">
+              <span class="inputDesc">Bestseller</span>
+              <%= form.select(:is_bestseller, options_for_select([["false", 0], ["true", 1]], selected: 0)) %>
+            </div>
+            <div id="bookAuthor" class="formLine">
+              <span class="inputDesc">Author</span>
+              <%= form.text_field :author, :class => "inputField" %>
+            </div>
+            <div id="isbn" class="formLine">
+              <span class="inputDesc">ISBN</span>
+              <%= form.text_field :isbn, :class => "inputField" %>
+            </div>
+            <div id="format" class="formLine">
+              <span class="inputDesc">Format</span>
+              <%= form.select(:format, options_for_select(["Paperback","Hardback"])) %>
+            </div>
+            <div id="category" class="formLine">
+              <span class="inputDesc">Category</span>
+              <%= form.collection_select :category_id, Category.order(:title), :id, :title, include_blank: true %>
+            </div>
+            <div id="genre" class="formLine">
+              <span class="inputDesc">Genre</span>
+              <%= form.grouped_collection_select :genre_id, Category.order(:title), :ordered_genres, :title, :id, :title, include_blank: true %>
+            </div>
+            <div id="publisher" class="formLine">
+              <span class="inputDesc">Publisher</span>
+              <%= form.text_field :publisher, :class => "inputField" %>
+            </div>
+            <div id="pubicationDate" class="formLine">
+              <span class="inputDesc">Publication date</span>
+              <%= form.date_select(:publication_date, :start_year => 1950, :end_year => Time.now.year,  :order => [:year, :month, :day], :class => "inputField") %>
+            </div>
+            <div id="pages" class="formLine">
+              <span class="inputDesc">Pages</span>
+              <%= form.number_field :pages, :class => "dimmen" %>
+            </div>
+            <div id="productDimen" class="formLine">
+              <span class="inputDesc">Product dimensions</span>
+              <div>
+                <%= form.number_field :dimension_w, :class => "dimmen" %>
+                <span class="inputUnit">x</span>
+                <%= form.number_field :dimension_h, :class => "dimmen" %>
+                <span class="inputUnit">x</span>
+                <%= form.number_field :dimension_d, :class => "dimmen" %>
+                <span class="inputUnit">mm</span>
+              </div>
+            </div>
+            <div id="weight" class="formLine">
+              <span class="inputDesc">Weight</span>
+              <div>
+                <%= form.number_field :weight, :class => "dimmen" %>
+                <span class="inputUnit">g</span>
+              </div>
+            </div>
+            <div id="unit" class="formLine">
+              <span class="inputDesc">Unit in Stock</span>
+              <%= form.number_field :unit, :class => "dimmen" %>
+            </div>
+          </div>
+        </div>
+        <div id="productDesc">
+          <div class="productDetailsTitle">Product description</div>
+          <div class="separatorLine"></div>
+          <div id="descField">
+            <%= form.text_area :description, :class => "textDesc" %>
+          </div>
+        </div>
+        <div class="actions">
+          <%= form.submit :Add, :class => "submitBtn"%>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

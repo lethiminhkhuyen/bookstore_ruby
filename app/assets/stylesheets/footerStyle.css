@@ -1,0 +1,159 @@
+footer{
+	width: 100vw;
+	height: 13.5vw;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	margin-top: 2.8vw;
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3{
+	text-align: left;
+	text-transform: uppercase;
+	color: #1CA5AF;
+	padding: 0;
+	margin: 0;
+}
+h1{
+	font-size: 1.4vw;
+	margin-bottom: .02vw;
+	line-height: 1.4vw;
+	height: 1.4vw;
+}
+h2{
+	font-size: 1.2vw;
+	margin-bottom: .7vw;
+	line-height: 1.2vw;
+	height: 1.2vw;
+}
+h3{
+	font-size: .9vw;
+	margin-bottom: .35vw;
+	line-height: .9vw;
+	height: .9vw;
+}
+#mainParts{
+	width: 100%;
+	margin-left: 0;
+	height: 11vw;
+	background-color: #f8f8f8;
+}
+#innerPart{
+	width: 80vw;
+	height: 100%;
+	margin-left: 10vw;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	padding-top: 1.4vw;
+	padding-bottom: 1.4vw;
+}
+#copyright{
+	height: 1vw;
+	font-size: 1vw;
+}
+.newsletter{
+	width: 27vw;
+	height: 8.2vw;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.newsletterTitle{
+	font-size: 1vw;
+	text-transform: uppercase;
+	text-align: left;
+	color: #4a4a4a;
+}
+#newsletter_inputField{
+	width: 100%;
+	height: 1.7vw;
+	border: 1px solid #dedfe0;
+	border-radius: 3px;
+}
+#newsletter_terms{
+	width: 1.2vw;
+	height: 1.2vw;
+	border: 1px solid #dedfe0;
+	border-radius: 3px;
+	background-color: #fff;
+}
+.terms{
+	font-size: .9vw;
+}
+.theTerms{
+	display: flex;
+	justify-content: start;
+	flex-direction: row;
+	align-items: center;
+}
+.subscribeBtnActive{
+	width: 100%;
+	height: 1.4vw;
+	background-color: #1EA5AE;
+	font-size: 1vw;
+	text-transform: uppercase;
+	color: #fff;
+	border: none;
+	text-decoration: none;
+}
+.subscribeBtnUnactive{
+	width: 100%;
+	height: 1.4vw;
+	background-color: #4a4a4a;
+	font-size: 1vw;
+	text-transform: uppercase;
+	color: #fff;
+	border: none;
+	text-decoration: none;
+}
+.subscribeBtnActive:hover{
+	opacity: .5;
+}
+.footerLink{
+	font-size: 1vw;
+}
+#about{
+	width: 13.5vw;
+}
+#folioStory, #helpList{
+	display: flex;
+	justify-content: start;
+	flex-direction: column;
+}
+#helpContact{
+	width: 13.5vw;
+}
+#followUs{
+	width: 16vw;
+}
+#socialMediaList{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.socialMedia{
+	width: 2.8vw;
+	height: 2.8vw;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+#facebook{
+	background-image: url("facebook.svg");
+}
+#pinterest{
+	background-image: url("pinterest.svg");
+}
+#youtube{
+	background-image: url("youtube.svg");
+}
+#instagram{
+	background-image: url("instagram.svg");
+}
+#twitter{
+	background-image: url("twitter.svg");
+}

@@ -1,0 +1,83 @@
+<% stylesheet_link_tag "cartStyle" %>
+<% javascript_include_tag "cart" %>
+  <section id="navPoint">
+    <span class="navPointHead">You are here:</span>
+  </section>
+  <section id="basketTitle">
+      <div class="thebasket">Your Basket</div>
+      <div class="separatorLine"></div>
+  </section>
+  <section id="mainBasket">
+    
+    <div id="orderInfo">
+      <div id="basketItems">
+        <div class="itemsTitle">Items</div>
+        <div class="separatorLine"></div>
+        <div class="items">
+          <% @items.each do |item| %>
+            <div class="singleItem">
+              <div class="bkImage"><%= image_tag( item.book.book_image, :alt => item.book.title) %></div>
+              <div class="bkDetails">
+                <div class="bkTitle"><%= item.book.title %></div>
+                <div class="bkInfo"><%= item.book.author %></div>
+                <div class="bkInfoPrice"><%= quid(item.price) %></div>
+                <div class="bkInfo"><%= item.book.format %></div>
+                <div class="bkInfo">ISBN<%= item.book.isbn %></div>
+                <%= form_for item, method: :delete do |f| %>
+                  <%= f.submit "Remove", :id => "removeBtn" %>
+                <% end %>
+              </div>
+              <div class="bkQuantity"><%= item.quantity %></div>
+              <div class="bkPrice"><%= quid(item.price * item.quantity) %></div>
+            </div>
+            <div class="separatorLine"></div>
+          <% end %>
+        </div>
+      </div>
+      <div id="deliveryOptions">
+        <%= form_with(model: current_cart.order, url: checkout_path) do |form| %>
+          <div id="delOps">
+            <span class="detailsEle left">DELIVERY </span><span class="detailsEle right">
+              <%= form.select :delivery_cost, options_for_select([["UK Free 2nd Class " + quid(@freeOpt), @freeOpt], ["UK 1st Class " + quid(@firstOpt), @firstOpt], ["UK Courier " + quid(@courier), @courier]]), {}, { :class => "delivery_opts" } %>
+              
+            </span>
+          </div>
+          <div id="subTotal"><span class="detailsEle left">subtotal </span><span id="booksSubtotal" class="detailsEle right"><%= quid(current_cart.order.sub_total) %></span></div>
+          <div id="deliveryCost"><span class="detailsEle left">Delivery </span><span id="deliveryChosen" class="detailsEle right"><%= quid(current_cart.order.delivery_cost) %></span></div>
+          <div class="separatorLine"></div>
+          <div id="totalValue">
+            <span class="detailsDescTotal">Total payable</span>
+            <span id="finalValue" class="actualValue"><%= quid(current_cart.order.sub_total) %></span>
+          </div>
+          <div id="checkout">
+            <% form.hidden_field :address_id, :value => current_user.addresses[0].id %>
+            <% form.hidden_field :user_id, :value => current_user.id %>
+          <%= form.submit "Secure checkout", :id => "checkoutBtn" %>
+          </div>
+      </div>
+      <% end %>
+    </div>
+    <div id="address">
+      
+        <div class="itemsTitle">Postage Address</div>
+        <div class="separatorLine"></div>
+        <div id="postageAddress">
+          <div class="addressEle" class="addressField">
+            <%= current_user.first_name + " " + current_user.last_name %>
+          </div>
+          <div class="addressEle"  class="addressField">
+            <%= current_user.addresses[0].flat.to_s + " " + current_user.addresses[0].house_number.to_s + ", " + current_user.addresses[0].street %>
+          </div>
+          <div class="addressEle"  class="addressField">
+            <%= current_user.addresses[0].postcode + " " + current_user.addresses[0].city %>
+          </div>
+          <div class="addressEle"  class="addressField">
+            <%= current_user.addresses[0].country %>
+          </div>
+          <div id="addressTel" class="addressEle"  class="addressField">
+            <%= "tel: " + current_user.addresses[0].tel %>
+          </div>
+        </div>
+      
+    </div>
+  </section>

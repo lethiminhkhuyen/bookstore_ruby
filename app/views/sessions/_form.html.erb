@@ -1,0 +1,17 @@
+<%= form_tag sessions_path do %>
+  <div id="userLogin">
+      <h1 id="userTitle">Log In</h1>
+      <div id="userAllDetails">
+        <div id="userEmail" class="formLine">
+          <%= text_field_tag :email, params[:email], :class => "userInputField3", :placeholder => "email" %>
+        </div>
+        <div id="userPassword" class="formLine">
+          <%= password_field_tag :password, "", :class => "userInputField3", autocomplete: "off", :placeholder => "password" %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Log In", :class => "submitBtn"%>
+      </div>
+  </div>
+<% end %>
+

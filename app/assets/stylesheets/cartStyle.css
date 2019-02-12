@@ -1,0 +1,173 @@
+.thebasket{
+	font-size: 1.4vw;
+	text-transform: uppercase;
+	color: #1EA5AE;
+	font-weight: bold;
+	margin-top: 1.4vw;
+}
+#mainBasket{
+	display: grid;
+	grid-template-columns: 52.4vw 1fr;
+	grid-column-gap: 2.8vw;
+	margin-top: 1.4vw;
+}
+#orderInfo{
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	align-items: flex-end;
+}
+#basketItems{
+	width: 100%;
+}
+.itemsTitle{
+	font-size: .8vw;
+	text-transform: uppercase;
+	color: #1EA5AE;
+	font-weight: bold;
+}
+.singleItem{
+	width: 100%;
+	height: 9.7vw;
+	margin-bottom: 1.4vw;
+	margin-top: 1.4vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-flow: row;
+}
+.bkImage{
+	width: 6.25vw;
+	height: 100%;
+}
+.bkDetails{
+	width: 33vw;
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.bkTitle{
+	width: 100%;
+	font-size: .8vw;
+	color: #1EA5AE;
+	font-weight: bold;
+	margin-bottom: .7vw;
+}
+.bkInfo{
+	font-size: .7vw;
+	color: #4A4A4A;
+	margin-bottom: .35vw;
+}
+.bkInfoPrice{
+	font-size: .8vw;
+	font-weight: bold;
+	color: #4A4A4A;
+	margin-bottom: 1.6vw;
+}
+#removeBtn{
+	width: 100%;
+	height: .7vw;
+	line-height: .7vw;
+	background-color: transparent;
+	font-size: .7vw;
+	text-align: left;
+	color: #F5AE06;
+	border: none;
+	text-decoration: none;
+}
+#removeBtn:hover{
+	opacity: .5;
+}
+.bkQuantity{
+	width: 2.8vw;
+	height: 1.4vw;
+	border: 1px solid #4a4a4a;
+	border-radius: 3px;
+	line-height: 1.4vw;
+	text-align: center;
+	font-size: .7vw;
+	color: #4A4A4A;
+}
+.bkPrice{
+	width: 4.6vw;
+	text-align: right;
+	font-weight: bold;
+	color: #4a4a4a;
+	font-size: 1vw;
+	line-height: 1vw;
+	height: 1vw;
+}
+#deliveryOptions{
+	width: 24.8vw;
+	margin-top: 1.4vw;
+}
+#delOps, #subTotal, #deliveryCost, #totalValue{
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: .7vw;
+	height: .8vw;
+	line-height: .8vw;
+}
+.delivery_opts{
+	font-size: .7vw;
+	line-height: 100%;
+	height: 100%;
+	width: 20.3vw;
+	border-radius: 3px;
+}
+.left{
+	font-size: .7vw;
+}
+.right{
+	font-size: .8vw;
+}
+#totalValue{
+	font-size: 1vw;
+	height: 1vw;
+	line-height: 1vw;
+	margin-top: .7vw;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#checkoutBtn, #saveAddressBtn{
+	width: 100%;
+	height: 1.4vw;
+	background-color: #1EA5AE;
+	font-size: 1vw;
+	text-transform: uppercase;
+	color: #fff;
+	border: none;
+	text-decoration: none;
+	margin-top: 1.4vw;
+}
+#checkoutBtn:hover, #saveAddressBtn:hover{
+	opacity: .5;
+}
+#address{
+	text-align: center;
+}
+#postageAddress{
+	margin-top: 1.4vw;
+}
+.addressEle{
+	font-size: .8vw;
+	line-height: .8vw;
+	height: .8vw;
+	margin-bottom: .35vw;
+}
+.addressField{
+	border: none;
+	border-bottom: 1px solid #4a4a4a;
+	text-align: center;
+	font-size: .8vw;
+	line-height: .8vw;
+	height: .8vw;
+	color: #979797;
+}
+#addressTel{
+	margin-top: 1vw;
+}

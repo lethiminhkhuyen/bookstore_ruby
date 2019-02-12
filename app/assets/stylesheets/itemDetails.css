@@ -1,0 +1,232 @@
+img {
+	object-fit: contain;
+	width: 100%;
+}
+#bookContent{
+	width: 80vw;
+	left: 10vw;
+	display: flex;
+	justify-content: start;
+	flex-direction: column;
+	color: #4a4a4a;
+	font-size: .9vw;
+}
+#navPoint{
+	margin-top: 1.4vw;
+	font-size: .8vw;
+}
+.navPointHead{
+	font-weight: bold;
+}
+.theTitle{
+	margin-top: 1.4vw;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.4vw;
+	line-height: 1.4vw;
+	height: 1.4vw;
+	color: #1CA5AF;
+	padding-bottom: .1vw;
+}
+.separatorLine{
+	width: 100%;
+	height: 1px;
+	background-color: #979797;
+}
+#theAuthor{
+	font-style: italic;
+	font-size: .8vw;
+	margin-top: .7vw;
+}
+#bookMainSection{
+	margin-top: 1.4vw;
+	display: grid;
+	grid-template-columns: 24.9vw 1fr;
+	grid-column-gap: 2.8vw;
+}
+#bookImage{
+	width: 100%;
+	max-height: 40vw;
+}
+#mainPrice{
+	display: flex;
+	flex-flow: row;
+	justify-content: flex-start;
+	align-items: baseline;
+}
+.theBookPrice{
+	font-weight: bold;
+	font-size: 1.95vw;
+	line-height: 1.95vw;
+	height: 1.95vw;
+}
+.freeDeliv{
+	font-size: 1vw;
+	line-height: 1vw;
+	height: 1vw;
+	font-weight: bold;
+	color: #1EA5AE;
+	text-align: left;
+}
+#buttonRow{
+	margin-top: .7vw;
+	display: flex;
+	flex-flow: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+#addToBasket{
+	width: 12.5vw;
+	height: 2.3vw;
+	margin-right: .7vw;
+}
+#addToBasketBtn{
+	width: 100%;
+	height: 100%;
+	text-transform: uppercase;
+	font-size: 1vw;
+	background-color: #1EA5AE;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	border: none;
+	line-height: 2.3vw;
+}
+.addBasketBtn{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 2.3vw;
+	font-size: 1vw;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: center;
+	border: none;
+	text-decoration: none;
+	background-color: #1EA5AE;
+}
+#addToWishlist{
+	max-height: 20px;
+	max-width: 23px;
+	height: 2vw;
+	width: 2vw;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("heart2.svg");
+	margin-right: .2vw;
+}
+#addToBasket:hover, #addToWishlist:hover{
+	opacity: .5;
+}
+.productDetailsTitle{
+	color: #1EA5AE;
+	line-height: .9vw;
+	height: .9vw;
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: .35vw;
+	margin-top: 1.4vw;
+}
+#bookAuthor, .detailsDesc{
+	margin-top: .7vw;
+}
+.detailsDesc{
+	font-weight: bold;
+}
+#pDetails{
+	margin-top: .7vw;
+}
+.inputDesc, .inputUnit{
+	font-size: .9vw;
+	line-height: .9vw;
+	height: .9vw;
+}
+.inputDesc{
+	width: 12vw;
+}
+.inputField, .dimmen, .userInputField, .userInputField2, .userInputField3{
+	font-size: .9vw;
+	line-height: .9vw;
+	height: .9vw;
+	border: none;
+	border-bottom: 1px solid #000;
+}
+.userInputField{
+	width: 26.6vw;
+}
+.userInputField2{
+	width: 20.6vw;
+}
+.userInputField3{
+	width: 100%;
+}
+.inputField{
+	width: 40.3vw;
+	
+}
+select{
+	font-size: .8vw;
+	line-height: 1.2vw;
+	height: 1.2vw;
+	border-radius: 5px;
+}
+.dimmen{
+	width: 3vw;
+}
+#descField{
+	width: 100%;
+	margin-top: .7vw;
+	margin-bottom: 1.4vw;
+}
+.textDesc{
+	width: 100%;
+	min-height: 20vw;
+}
+.imageUploader{
+	border: none;
+}
+.submitBtn{
+	width: 100%;
+	height: 2.3vw;
+	text-transform: uppercase;
+	font-size: 1vw;
+	background-color: #1EA5AE;
+	color: #fff;
+	line-height: 2.3vw;
+	text-align: center;
+	margin-right: .7vw;
+	border: none;
+}
+.submitBtn:hover{
+	opacity: .5;
+}
+.formLine{
+	margin-bottom: .35vw;
+	display: flex;
+	flex-flow: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #C8C8C8;
+  font-weight: normal;
+  text-align: center;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #C8C8C8;
+  font-weight: normal;
+  text-align: center;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #C8C8C8;
+  font-weight: normal;
+  text-align: center;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #C8C8C8;
+  font-weight: normal;
+  text-align: center;
+}

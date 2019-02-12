@@ -1,0 +1,77 @@
+<% stylesheet_link_tag "book_index" %>
+<h1 id="catalogueTitle">Books Catalogue</h1>
+    <% @books.each do |book| %>
+    <table class ="bookIndex">
+      <thead>
+        <tr>
+          <th colspan="2"><h2 class="catalogueBkTitle"><%= book.title %></h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Id</td><td><%= book.id %></td>
+        </tr>
+        <tr>
+          <td>Price</td><td><%= book.price %></td>
+        </tr>
+        <tr>
+          <td>Discount</td><td><%= book.discount %></td>
+        </tr>
+        <tr>
+          <td>Author</td><td><%= book.author %></td>
+        </tr>
+        <tr>
+          <td>ISBN</td><td><%= book.isbn %></td>
+        </tr>
+        <tr>
+          <td>Format</td><td><%= book.format %></td>
+        </tr>
+        <tr>
+          <td>Category</td><td><%= Category.where(id: book.category_id).pluck(:title)[0] %></td>
+        </tr>
+        <tr>
+          <td>Genre</td><td><%= Genre.where(id: book.genre_id).pluck(:title)[0] %></td>
+        </tr>
+        <tr>
+          <td>Publisher</td><td><%= book.publisher %></td>
+        </tr>
+        <tr>
+          <td>Publication date</td><td><%= book.publication_date %></td>
+        </tr>
+        <tr>
+          <td>Pages</td><td><%= book.pages %></td>
+        </tr>
+        <tr>
+          <td>Dimension</td><td><%= book.dimension_w.to_s + " x " + book.dimension_h.to_s + " x "+  book.dimension_d.to_s + " mm" %></td>
+        </tr>
+        <tr>
+          <td>Weight</td><td><%= book.weight.to_s + " g" %></td>
+        </tr>
+        <tr>
+          <td>Description</td><td><%= book.description %></td>
+        </tr>
+        <tr>
+          <td>Imported Unit</td><td><%= book.unit %></td>
+        </tr>
+         <tr>
+          <td>Instock Unit</td><td><%= book.instock_unit %></td>
+        </tr>
+        <tr>
+          <td>Imported Date</td><td><%= book.import_date %></td>
+        </tr>
+        <tr>
+          <td>Bestseller</td><td><%= book.is_bestseller %></td>
+        </tr>
+        <tr>
+          <td colspan="2"><%= link_to 'Show', book %>
+            <%= link_to 'Edit', edit_book_path(book) %>
+            <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </tbody>
+      </tr>
+      </table>
+    <% end %>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>

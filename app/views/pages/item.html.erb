@@ -1,0 +1,11 @@
+<% stylesheet_link_tag "index" %>
+<%= render "layout/itemDetails", title: @book.title, author: @book.author, book_image: @book.book_image, price: @book.price, author: @book.author, isbn: @book.isbn, format: @book.format, publisher: @book.publisher, publication_date: @book.publication_date, pages: @book.pages, dimension_w: @book.dimension_w, dimension_h: @book.dimension_w, dimension_d: @dimension_d, weight: @book.weight, description: @book.description %>
+	<section class="recommendation">
+		<div class="theTitle">sss</div>
+		<div class="separatorLine"></div>
+		<div id="sixBooks">
+		<% @books.each do |book| %>
+			<%= render "layout/itemPreview", book_image: book.book_image, title: book.title,  author: book.author, format: book.format, price: book.price %>
+		<% end %>
+		</div>
+	</section>

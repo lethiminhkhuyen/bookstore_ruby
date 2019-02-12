@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  price: 9.99
+  discount: 1
+  author: MyString
+  isbn: MyString
+  format: MyString
+  category: MyString
+  genre: MyString
+  publisher: MyString
+  publication_date: 2019-01-31
+  pages: 1
+  dimension_w: 1
+  dimension_h: 1
+  dimension_d: 1
+  weight: 1
+  unit: 1
+  description: MyText
+
+two:
+  title: MyString
+  price: 9.99
+  discount: 1
+  author: MyString
+  isbn: MyString
+  format: MyString
+  category: MyString
+  genre: MyString
+  publisher: MyString
+  publication_date: 2019-01-31
+  pages: 1
+  dimension_w: 1
+  dimension_h: 1
+  dimension_d: 1
+  weight: 1
+  unit: 1
+  description: MyText

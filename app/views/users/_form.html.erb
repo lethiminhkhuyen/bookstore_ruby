@@ -1,0 +1,83 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="userNew">
+    <div id="userMainSection">
+      <h1 id="userTitle">Sign Up</h1>
+      <div id="userAllDetails">
+        <div id="userSex" class="formLine">
+          <span class="inputDesc">Gender</span>
+          <%= form.select(:gender, options_for_select(["Male", "Female", "Prefer not to say"], selected: "Male"), {}, { :class => "inputSelect" }) %>
+        </div>
+        <div id="userName" class="formLine">
+          <span class="inputDesc">Name</span>
+          <%= form.text_field :first_name, :class => "userInputField" %>
+        </div>
+        <div id="userSurname" class="formLine">
+          <span class="inputDesc">Lastname</span>
+          <%= form.text_field :last_name, :class => "userInputField" %>
+        </div>
+        <div id="userBirthday" class="formLine">
+          <span class="inputDesc">Birthday</span>
+          <%= form.date_select(:birthday, :start_year => 1900, :end_year => Time.now.year,  :order => [:year, :month, :day], :class => "userInputField") %>
+        </div>
+        <div id="userEmail" class="formLine">
+          <span class="inputDesc">Email</span>
+          <%= form.text_field :email, :class => "userInputField" %>
+        </div>
+        <div id="userPassword" class="formLine">
+          <span class="inputDesc">Password</span>
+          <%= form.password_field :password, :class => "userInputField" %>
+        </div>
+        <div id="userPasswordConfirm" class="formLine">
+          <span class="inputDesc">Password Confirmation</span>
+          <%= form.password_field :password_confirmation, :class => "userInputField" %>
+        </div>
+        <div id="userAddress">
+          <h3 id="userAddressTitle">Postage Address</h3>
+          <div class="separatorLine"></div>
+          <div id="addressPart">
+            <%= form.fields_for :addresses, @user.addresses.build do |f| %>
+              <div id="streetAddress" class="formLine">
+                <span class="inputDesc">Address</span>
+                <%= f.number_field :flat, :class => "dimmen", placeholder: "flat" %>
+                <%= form.text_field :street, :class => "userInputField2", placeholder: "street" %>
+                <%= form.number_field :house_number, :class => "dimmen", placeholder: "nr." %>
+              </div>
+              <div id="postcodeAddress" class="formLine">
+                <span class="inputDesc">Postcode</span>
+                <%= form.text_field :postcode, :class => "userInputField" %>
+              </div>
+              <div id="cityAddress" class="formLine">
+                <span class="inputDesc">City</span>
+                <%= form.text_field :city, :class => "userInputField" %>
+              </div>
+              <div id="countryAddress" class="formLine">
+                <span class="inputDesc">Country</span>
+                <%= form.text_field :country, :class => "userInputField" %>
+              </div>
+              <div id="telAddress" class="formLine">
+                <span class="inputDesc">Telephone</span>
+                <%= form.text_field :tel, :class => "userInputField" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="actions">
+          <%= form.submit :Register, :class => "submitBtn"%>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+

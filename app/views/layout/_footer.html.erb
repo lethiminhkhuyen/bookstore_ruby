@@ -1,0 +1,51 @@
+<% stylesheet_link_tag "footerStyle" %>
+<% javascript_include_tag "footer" %>
+<footer>
+	<section id="mainParts">
+		<div id="innerPart">
+			<%= form_with scope: :newsletter, class: "newsletter", local: true do |form| %>
+			<p class="newsletterTitle">Receive news, updates and special offers</p>
+			<p>
+				<%= form.text_field :inputField %>
+			</p>
+			<p class="theTerms">
+				<%= form.check_box :terms %>
+				<span class="terms"><span class = "blackText"><%= @firstMessage %></span> <span><a class = "blueText" href=""><%= @secondMessage %></a></span></span>
+			</p>
+			<p>
+				<%= form.submit "SUBSCRIBE", :class => "subscribeBtnUnactive", :id => "subscribeBtn" %>
+			</p>
+			<% end %>
+			<div id="about">
+				<h2>About Folio</h2>
+				<div id="folioStory">
+					<a class="footerLink" href="">Our Story</a>
+					<a class="footerLink" href="">Meet Our Team</a>
+					<a class="footerLink" href="">FAQ</a>
+					<a class="footerLink" href="">Join Our Team</a>
+				</div>
+			</div>
+			<div id="helpContact">
+				<h2>Help & contact</h2>
+				<div id="helpList">
+					<a class="footerLink" href="">Contact Us</a>
+					<a class="footerLink" href="">Terms & Conditions</a>
+					<a class="footerLink" href="">Privacy Policy</a>
+					<a class="footerLink" href="">Delivery Options</a>
+					<a class="footerLink" href="">Delivery Returns</a>
+				</div>
+			</div>
+			<div id="followUs">
+				<h2>Follow us</h2>
+				<div id="socialMediaList">
+					<a class="socialMedia" href="" id="facebook"></a>
+					<a class="socialMedia" href="" id="pinterest"></a>
+					<a class="socialMedia" href="" id="youtube"></a>
+					<a class="socialMedia" href="" id="instagram"></a>
+					<a class="socialMedia" href="" id="twitter"></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="copyright">&#169; Folio.com Limited, <%= @copyrightYear %></section>
+</footer>

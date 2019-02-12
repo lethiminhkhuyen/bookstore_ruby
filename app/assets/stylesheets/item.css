@@ -1,0 +1,10 @@
+.recommendation{
+	margin-top: 2.8vw;
+}
+#sixBooks{
+	margin-top: .7vw;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}

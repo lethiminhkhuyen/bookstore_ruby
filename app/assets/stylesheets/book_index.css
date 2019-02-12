@@ -1,0 +1,10 @@
+.bookIndex, .bookIndex th, .bookIndex td{
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+.bookIndex{
+	margin-top: 1vw;
+}
+#catalogueTitle, .catalogueBkTitle{
+	text-align: center;
+}

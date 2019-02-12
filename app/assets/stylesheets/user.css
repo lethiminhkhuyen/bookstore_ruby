@@ -1,0 +1,20 @@
+#userFroms{
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 2.8vw;
+	justify-content: center;
+	margin-top: 2.8vw;
+}
+#userTitle{
+	text-align: center;
+	margin-bottom: 1.4vw;
+}
+#userAddressTitle{
+	text-align: center;
+	margin-top: .7vw;
+	margin-bottom: .7vw;
+}
+#addressPart{
+	margin-top: .7vw;
+	margin-bottom: 1.4vw;
+}
